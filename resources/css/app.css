@@ -1,0 +1,39 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+#outer, .outer {
+    display: table;
+    margin: 0 auto;
+}
+
+#inner, .inner {
+    width: 100%;
+}
+
+.checkbox-round {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    background-image: none;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox-round:checked {
+    background-color: rgba(30, 144, 255,1);
+    background-image: url("/img/check.png");
+}
+
+.vue-confirm .vc-btn:not(.left){
+    color: white;
+    background-color: dodgerblue;
+}
+
+.vue-confirm .vc-btn:not(.left):hover{
+    background-color: #4BA6FF;
+}
