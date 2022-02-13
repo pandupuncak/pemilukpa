@@ -28,7 +28,7 @@ class MyHelper
         $tz = 'Asia/Jakarta'; // +07:00
 
         $currentDate = Carbon::now($tz);
-        $startDate = Carbon::create(2021, 2, 13, 17, 0, 0, $tz); // Year, Month, Date, Hour, Minute, Second
+        $startDate = Carbon::create(2022, 2, 0, 0, 0, 0, $tz); // Year, Month, Date, Hour, Minute, Second
 
         return $currentDate->lessThan($startDate);
     }
@@ -38,7 +38,7 @@ class MyHelper
         $tz = 'Asia/Jakarta'; // +07:00
 
         $currentDate = Carbon::now($tz);
-        $stopDate = Carbon::create(2021, 2, 17, 23, 0, 0, $tz); // Year, Month, Date, Hour, Minute, Second
+        $stopDate = Carbon::create(2022, 3, 17, 23, 0, 0, $tz); // Year, Month, Date, Hour, Minute, Second
 
         return $currentDate->greaterThan($stopDate);
     }

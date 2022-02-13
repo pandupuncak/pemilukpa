@@ -78,7 +78,7 @@ class UserController extends Controller
         try {
             foreach ($reader as $index => $row) {
                 // Parse NIM and Name: name;NIM;angkatan;email;row
-                $csvRowArray = explode(";", $row[0]);
+                $csvRowArray = explode(",", $row[0]);
                 $name = $csvRowArray[0];
                 $nim = $csvRowArray[1];
                 $angkatan = $csvRowArray[2];

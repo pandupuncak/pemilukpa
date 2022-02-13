@@ -30,11 +30,11 @@
 
                         Data penting terkait pemilu dapat diakses di sini:<br>
                         <a
-                            href="https://bit.ly/KontenPemiluKPA49"
+                            href="https://linktr.ee/PemiluBP50"
                             target="_blank"
                             class="text-indigo-700"
                         >
-                            https://bit.ly/KontenPemiluKPA49
+                            https://linktr.ee/PemiluBP50
                         </a>
                     </div>
                 </div>

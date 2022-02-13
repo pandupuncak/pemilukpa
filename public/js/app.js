@@ -4978,6 +4978,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -27579,14 +27580,11 @@ var staticRenderFns = [
           "a",
           {
             staticClass: "text-indigo-700",
-            attrs: {
-              href: "https://bit.ly/KontenPemiluKPA49",
-              target: "_blank"
-            }
+            attrs: { href: "https://linktr.ee/PemiluBP50", target: "_blank" }
           },
           [
             _vm._v(
-              "\n                        https://bit.ly/KontenPemiluKPA49\n                    "
+              "\n                        https://linktr.ee/PemiluBP50\n                    "
             )
           ]
         )
@@ -31483,14 +31481,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container p-8" }, [
       _c("h3", { staticClass: "text-center" }, [
-        _vm._v("Konten Kandidat: Reynaldi Andiva Dewangga")
+        _vm._v("Konten Kandidat: Agam Pamungkas")
       ]),
       _vm._v(" "),
       _c("h4", { staticClass: "text-center" }, [_vm._v("Visi")]),
       _vm._v(" "),
       _c("p", { staticClass: "text-center lg:px-32" }, [
         _vm._v(
-          "\n            Menjadikan KPA-ITB sebagai organisasi yang adaptif dalam pelestarian seni angklung dan pengembangan potensi anggota\n            dengan berlandaskan kekeluargaan dan menjunjung Ketuhanan Yang Maha Esa\n        "
+          "\n            Testing 123\n            Menjadikan KPA-ITB sebagai organisasi yang adaptif dalam pelestarian seni angklung dan pengembangan potensi anggota\n            dengan berlandaskan kekeluargaan dan menjunjung Ketuhanan Yang Maha Esa\n        "
         )
       ]),
       _vm._v(" "),
@@ -31500,7 +31498,9 @@ var staticRenderFns = [
         _c("li", [_vm._v("1. Mengutamakan Ketuhanan Yang Maha Esa")]),
         _vm._v(" "),
         _c("li", [
-          _vm._v("2. Menjadikan interaksi dan rasa peduli antaranggota KPA-ITB")
+          _vm._v(
+            "2. Menjadikan TESTING interaksi dan rasa peduli antaranggota KPA-ITB"
+          )
         ]),
         _vm._v(" "),
         _c("li", [
@@ -47224,8 +47224,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\GitHub\kpa-poll-laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\GitHub\kpa-poll-laravel\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! D:\Projects\pemilukpa\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Projects\pemilukpa\resources\css\app.css */"./resources/css/app.css");
 
 
 /***/ })

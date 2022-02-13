@@ -45,9 +45,10 @@
         </div>
 
         <div class="container p-8">
-            <h3 class="text-center">Konten Kandidat: Reynaldi Andiva Dewangga</h3>
+            <h3 class="text-center">Konten Kandidat: Agam Pamungkas</h3>
             <h4 class="text-center">Visi</h4>
             <p class="text-center lg:px-32">
+                Testing 123
                 Menjadikan KPA-ITB sebagai organisasi yang adaptif dalam pelestarian seni angklung dan pengembangan potensi anggota
                 dengan berlandaskan kekeluargaan dan menjunjung Ketuhanan Yang Maha Esa
             </p>
@@ -55,7 +56,7 @@
             <h4 class="text-center">Misi</h4>
             <ol class="lg:px-32">
                 <li>1. Mengutamakan Ketuhanan Yang Maha Esa</li>
-                <li>2. Menjadikan interaksi dan rasa peduli antaranggota KPA-ITB</li>
+                <li>2. Menjadikan TESTING interaksi dan rasa peduli antaranggota KPA-ITB</li>
                 <li>3. Menjaga serta meningkatkan kualitas musikalitas anggota KPA-ITB</li>
                 <li>4. Meningkatkan eksistensi KPA-ITB sebagai komunitas angklung yang adaptif dalam melestarikan seni angklung</li>
                 <li>5. Menanamkan rasa profesionalisme yang berlandaskan kekeluargaan kepada anggota KPA-ITB</li>
