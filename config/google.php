@@ -17,8 +17,8 @@ return [
     | https://developers.google.com/console
     |
     */
-    'client_id' => env('GOOGLE_CLIENT_ID', ''),
-    'client_secret' => env('GOOGLE_CLIENT_SECRET', ''),
+    'client_id' => env('GOOGLE_CLIENT_ID', '710252603738-oq9pjd7geaeh0ifojogomfdefd1drpfu.apps.googleusercontent.com'),
+    'client_secret' => env('GOOGLE_CLIENT_SECRET', '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'),
     'redirect_uri' => env('GOOGLE_REDIRECT', ''),
     'scopes' => ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive'],
     'access_type' => 'online',

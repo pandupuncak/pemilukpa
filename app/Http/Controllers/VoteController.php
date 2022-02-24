@@ -116,8 +116,8 @@ class VoteController extends Controller
 
                 // Update spreadsheet
                 $spreadsheetIds = [
-                    '1hXCAMm55FO1qOj9deNV0sR3pvLUK-FYKMOijY4T1JvI',
-                    '15BPGy2OY9oFv-oRBU4c_WEWyGet0oa8mKnRIZlP7dB4'
+                    '1k2VUmjjQdo4OhPrffrzvA0wMVYXU8MCX9alm9kw7aKk',
+                    '1dj2yp07mEft94hx14XyKt0tNvYvrZDxLEJyC1HxcrY8'
                 ];
                 $sheetIds = ['0', '85510360'];
                 $userRow = $user->ss_row;
@@ -132,12 +132,14 @@ class VoteController extends Controller
             // Append vote log
             Sheets::spreadsheet($spreadsheetIds[1])
                 ->sheetById($sheetIds[1])
+                ->range('Sheet1!A:E')
                 ->append([[$voteNumber, $president]]);
 
             // Update user vote status in spreadsheet
             Sheets::spreadsheet($spreadsheetIds[0])
                 ->sheetById($sheetIds[0])
-                ->range('A' . ($userRow + 1))
+                ->range('Sheet1!A:C')
+                #->range('A' . ($userRow + 1))
                 ->update([[$nim, $name, "Telah Memilih"]]);
 
             // Send mail to registered email

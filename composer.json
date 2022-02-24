@@ -20,7 +20,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.4",
         "league/csv": "^9.6",
-        "revolution/laravel-google-sheets": "^5.4",
+        "revolution/laravel-google-sheets": "^5.8",
         "tightenco/ziggy": "^0.9.4"
     },
     "require-dev": {

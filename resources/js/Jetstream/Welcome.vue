@@ -6,7 +6,7 @@
             </div>
 
             <div class="mt-8 text-2xl heading">
-                Selamat datang di aplikasi Pemilu KPA ITB!
+                Selamat datang di aplikasi Pemilu KPA ITB BP 50!
             </div>
 
             <div class="mt-6 my-content text-lg" :style="`color: ${messageColor[voteStatus]}`">

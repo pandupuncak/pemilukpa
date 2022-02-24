@@ -9,7 +9,7 @@
 
                     <div class="grid grid-cols-2 gap-4 py-4 sm:w-4/5 lg:w-3/5 xl:w-1/2 mx-auto">
                         <div>
-                            <img class="rounded-lg" src="/img/calon1-reynaldi.png"
+                            <img class="rounded-lg" src="/img/agam.png"
                                 v-bind:style="p1Style"
                                 v-on:click="selectPresident(1, $event)"
                                 alt="kandidat"
@@ -48,18 +48,15 @@
             <h3 class="text-center">Konten Kandidat: Agam Pamungkas</h3>
             <h4 class="text-center">Visi</h4>
             <p class="text-center lg:px-32">
-                Testing 123
-                Menjadikan KPA-ITB sebagai organisasi yang adaptif dalam pelestarian seni angklung dan pengembangan potensi anggota
-                dengan berlandaskan kekeluargaan dan menjunjung Ketuhanan Yang Maha Esa
+                Terciptanya KPA-ITB sebagai Organisasi Kesenian Angklung yang menjadi tempat 
+                berkembang dan pulang bagi anggotanya, serta adaptif terhadap perubahan.
             </p>
 
             <h4 class="text-center">Misi</h4>
             <ol class="lg:px-32">
-                <li>1. Mengutamakan Ketuhanan Yang Maha Esa</li>
-                <li>2. Menjadikan TESTING interaksi dan rasa peduli antaranggota KPA-ITB</li>
-                <li>3. Menjaga serta meningkatkan kualitas musikalitas anggota KPA-ITB</li>
-                <li>4. Meningkatkan eksistensi KPA-ITB sebagai komunitas angklung yang adaptif dalam melestarikan seni angklung</li>
-                <li>5. Menanamkan rasa profesionalisme yang berlandaskan kekeluargaan kepada anggota KPA-ITB</li>
+                <li>1. Menyediakan wadah berhimpun yang dapat menjadi tempat mengembangkan potensi diri dan menjaga partisipasi anggotanya.</li>
+                <li>2. Meningkatkan kemampuan musikalitas dan angklung anggota melalui pelatihan dan penampilan guna menjaga kelestarian angklung.</li>
+                <li>3. Mengenalkan KPA-ITB sebagai organisasi kesenian angklung yang adaptif di lingkungan ITB pada khususnya dan di luar ITB pada umumnya.</li>
             </ol>
         </div>
 
@@ -106,7 +103,7 @@ export default {
             },
             president_candidates: {
                 0: "TIDAK MEMILIH",
-                1: "Reynaldi Andiva Dewangga",
+                1: "Agam Pamungkas",
                 2: "KOTAK KOSONG",
             },
             isLoading: false,

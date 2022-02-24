@@ -4976,9 +4976,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4997,7 +4994,7 @@ __webpack_require__.r(__webpack_exports__);
       },
       president_candidates: {
         0: "TIDAK MEMILIH",
-        1: "Reynaldi Andiva Dewangga",
+        1: "Agam Pamungkas",
         2: "KOTAK KOSONG"
       },
       isLoading: false
@@ -5297,7 +5294,7 @@ __webpack_require__.r(__webpack_exports__);
       i: 0,
       counting_status: 0,
       //0 = not started, 1 = counting, 2 = done
-      first_president_name: "Reynaldi Andiva Dewangga",
+      first_president_name: "Agam Pamungkas",
       second_president_name: "Kotak Kosong"
     };
   },
@@ -27367,7 +27364,7 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "mt-8 text-2xl heading" }, [
           _vm._v(
-            "\n            Selamat datang di aplikasi Pemilu KPA ITB!\n        "
+            "\n            Selamat datang di aplikasi Pemilu KPA ITB BP 50!\n        "
           )
         ]),
         _vm._v(" "),
@@ -31379,7 +31376,7 @@ var render = function() {
                   _c("img", {
                     staticClass: "rounded-lg",
                     style: _vm.p1Style,
-                    attrs: { src: "/img/calon1-reynaldi.png", alt: "kandidat" },
+                    attrs: { src: "/img/agam.png", alt: "kandidat" },
                     on: {
                       click: function($event) {
                         return _vm.selectPresident(1, $event)
@@ -31488,36 +31485,28 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", { staticClass: "text-center lg:px-32" }, [
         _vm._v(
-          "\n            Testing 123\n            Menjadikan KPA-ITB sebagai organisasi yang adaptif dalam pelestarian seni angklung dan pengembangan potensi anggota\n            dengan berlandaskan kekeluargaan dan menjunjung Ketuhanan Yang Maha Esa\n        "
+          "\n            Terciptanya KPA-ITB sebagai Organisasi Kesenian Angklung yang menjadi tempat \n            berkembang dan pulang bagi anggotanya, serta adaptif terhadap perubahan.\n        "
         )
       ]),
       _vm._v(" "),
       _c("h4", { staticClass: "text-center" }, [_vm._v("Misi")]),
       _vm._v(" "),
       _c("ol", { staticClass: "lg:px-32" }, [
-        _c("li", [_vm._v("1. Mengutamakan Ketuhanan Yang Maha Esa")]),
-        _vm._v(" "),
         _c("li", [
           _vm._v(
-            "2. Menjadikan TESTING interaksi dan rasa peduli antaranggota KPA-ITB"
+            "1. Menyediakan wadah berhimpun yang dapat menjadi tempat mengembangkan potensi diri dan menjaga partisipasi anggotanya."
           )
         ]),
         _vm._v(" "),
         _c("li", [
           _vm._v(
-            "3. Menjaga serta meningkatkan kualitas musikalitas anggota KPA-ITB"
+            "2. Meningkatkan kemampuan musikalitas dan angklung anggota melalui pelatihan dan penampilan guna menjaga kelestarian angklung."
           )
         ]),
         _vm._v(" "),
         _c("li", [
           _vm._v(
-            "4. Meningkatkan eksistensi KPA-ITB sebagai komunitas angklung yang adaptif dalam melestarikan seni angklung"
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _vm._v(
-            "5. Menanamkan rasa profesionalisme yang berlandaskan kekeluargaan kepada anggota KPA-ITB"
+            "3. Mengenalkan KPA-ITB sebagai organisasi kesenian angklung yang adaptif di lingkungan ITB pada khususnya dan di luar ITB pada umumnya."
           )
         ])
       ])
@@ -45917,7 +45906,8 @@ var map = {
 	"./Vote/Requests": "./resources/js/Pages/Vote/Requests.vue",
 	"./Vote/Requests.vue": "./resources/js/Pages/Vote/Requests.vue",
 	"./Vote/Results": "./resources/js/Pages/Vote/Results.vue",
-	"./Vote/Results.vue": "./resources/js/Pages/Vote/Results.vue"
+	"./Vote/Results.vue": "./resources/js/Pages/Vote/Results.vue",
+	"./Vote/agam.png": "./resources/js/Pages/Vote/agam.png"
 };
 
 
@@ -47130,6 +47120,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Results_vue_vue_type_template_id_17bcef5a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Vote/agam.png":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/Vote/agam.png ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/agam.png?48c219de85c6dda4e67babd0dd709ca3";
 
 /***/ }),
 

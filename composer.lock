@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65e21cc5843e6cd5a8b50ac6d0d49071",
+    "content-hash": "5b90159d4eec5de3b52b078a57c6fc94",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4305,16 +4305,16 @@
         },
         {
             "name": "revolution/laravel-google-sheets",
-            "version": "5.7.1",
+            "version": "5.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-google-sheets.git",
-                "reference": "2cc30786acc176a3456fc6ea5c17fe05682a283b"
+                "reference": "eb999abcdf01e94f495db1f28666a34f7a1b76bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-google-sheets/zipball/2cc30786acc176a3456fc6ea5c17fe05682a283b",
-                "reference": "2cc30786acc176a3456fc6ea5c17fe05682a283b",
+                "url": "https://api.github.com/repos/kawax/laravel-google-sheets/zipball/eb999abcdf01e94f495db1f28666a34f7a1b76bd",
+                "reference": "eb999abcdf01e94f495db1f28666a34f7a1b76bd",
                 "shasum": ""
             },
             "require": {
@@ -4322,7 +4322,7 @@
                 "illuminate/container": "^6.0||^7.0||^8.0||^9.0",
                 "illuminate/support": "^6.0||^7.0||^8.0||^9.0",
                 "php": "^7.4||^8.0",
-                "pulkitjalan/google-apiclient": "^4.1@dev"
+                "pulkitjalan/google-apiclient": "^4.1||^5.0"
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
@@ -4362,9 +4362,9 @@
                 "sheets"
             ],
             "support": {
-                "source": "https://github.com/kawax/laravel-google-sheets/tree/5.7.1"
+                "source": "https://github.com/kawax/laravel-google-sheets/tree/5.8.0"
             },
-            "time": "2022-01-31T07:00:08+00:00"
+            "time": "2022-02-17T04:38:27+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

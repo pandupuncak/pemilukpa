@@ -105,7 +105,7 @@
                 i: 0,
                 counting_status: 0, //0 = not started, 1 = counting, 2 = done
 
-                first_president_name: "Reynaldi Andiva Dewangga",
+                first_president_name: "Agam Pamungkas",
                 second_president_name: "Kotak Kosong",
             }
         },
