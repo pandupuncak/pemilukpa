@@ -8,10 +8,11 @@
         <div>
             Halo,<br><br>
 
-            Berikut adalah NIM dan password yang dapat Anda gunakan untuk login ke aplikasi {{ env('APP_NAME') }},<br>
+            Berikut adalah NIM dan password yang dapat Anda gunakan untuk login ke aplikasi {{ env('APP_NAME') }}, bagi Awi, Caya, Lume mohon menggunakan NIM jurusan. Bagi Artyakara, mohon menggunakan NIM TPB. <br>
             NIM: <b>NIM_Anda</b><br>
             Password: <b>{{ $password }}</b><br><br>
 
+            *
             Mohon untuk tidak membalas email ini. Terima kasih.
         </div>
     </body>

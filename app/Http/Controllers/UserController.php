@@ -68,92 +68,125 @@ class UserController extends Controller
         // Get csv file
         $file = $request->file('csv');
 
+        // Get file details
+        $filename = $file->getClientOriginalName();
+
+        // Moving file
+        $location = 'uploads';
+        $file->move($location,$filename);
+        $filepath = public_path($location . "/" . $filename);
+
         // Create a CSV reader instance
-        $reader = Reader::createFromFileObject($file->openFile());
+        //$reader = Reader::createFromFileObject($file->openFile());
+        $fileopened = fopen($filepath, "r");
+        if($fileopened !== FALSE){
+            // while(!feof($fileopened)){
+            //     $lines[] = fgetcsv($fileopened,1000,',');
+            // }
+            // Loop through rows
+            $userData = [];
+            $counter = 0;
+            DB::beginTransaction();
+            try {
+                // foreach ($reader as $lines => $row) 
+                while(($line = fgetcsv($fileopened)) !== FALSE){
+                    // Parse NIM and Name: name;NIM;angkatan;email;row
+                    $csvRowArray = $line; 
+                    //explode(",", $row[0])
+                    $name = $csvRowArray[0];
+                    $nim = $csvRowArray[1];
+                    $angkatan = $csvRowArray[2];
+                    $email = $csvRowArray[3];
+                    $speadsheetRow = $csvRowArray[4];
 
-        // Loop through rows
-        $userData = [];
-        $counter = 0;
-        DB::beginTransaction();
-        try {
-            foreach ($reader as $index => $row) {
-                // Parse NIM and Name: name;NIM;angkatan;email;row
-                $csvRowArray = explode(",", $row[0]);
-                $name = $csvRowArray[0];
-                $nim = $csvRowArray[1];
-                $angkatan = $csvRowArray[2];
-                $email = $csvRowArray[3];
-                $speadsheetRow = $csvRowArray[4];
+                    // Generate User model
+                    $user = new User;
 
-                // Generate User model
-                $user = new User;
+                    $user->nim = $nim;
+                    $user->name = $name;
+                    $user->angkatan = $angkatan;
+                    $user->role_id = self::REGULAR; // Regular User
+                    $user->email = $email;
+                    $user->ss_row = $speadsheetRow;
 
-                $user->nim = $nim;
-                $user->name = $name;
-                $user->angkatan = $angkatan;
-                $user->role_id = self::REGULAR; // Regular User
-                $user->email = $email;
-                $user->ss_row = $speadsheetRow;
+                    $randomPassword = $this->generateRandomString(10);
+                    $user->password = Hash::make($randomPassword);
 
-                $randomPassword = $this->generateRandomString(10);
-                $user->password = Hash::make($randomPassword);
+                    $user->save();
 
-                $user->save();
+                    // Encrypt and decrypt NIM
+                    $nimArray = [];
+                    $encrypted = Crypt::encryptString($nim);
+                    $decrypted = Crypt::decryptString($encrypted);
 
-                // Encrypt and decrypt NIM
-                $nimArray = [];
-                $encrypted = Crypt::encryptString($nim);
-                $decrypted = Crypt::decryptString($encrypted);
+                    // Check if successfully decrypt NIM, and encrypted NIM must be unique
+                    $status = ($decrypted == $nim) && (!in_array($encrypted, $nimArray));
 
-                // Check if successfully decrypt NIM, and encrypted NIM must be unique
-                $status = ($decrypted == $nim) && (!in_array($encrypted, $nimArray));
+                    $nimArray[$encrypted] = $nim;
 
-                $nimArray[$encrypted] = $nim;
+                    array_push($userData, [
+                        'nim' => $nim,
+                        'name' => $name,
+                        'email' => $user->email,
+                        'password' => $randomPassword,
+                        'status' => $status
+                    ]);
 
-                array_push($userData, [
-                    'nim' => $nim,
-                    'name' => $name,
-                    'email' => $user->email,
-                    'password' => $randomPassword,
-                    'status' => $status
-                ]);
-
-                // Counter for rows
-                $counter += 1;
+                    // Counter for rows
+                    $counter += 1;
+                }
+            } catch (\Exception $e) {
+                DB::rollback();
+                throw $e;
             }
-        } catch (\Exception $e) {
-            DB::rollback();
-            throw $e;
+            DB::commit();
+        
+            return MyHelper::renderWithRole('User/Index', [
+                'imported_users' => $userData,
+                'row_count' => $counter,
+                'all_users' => User::orderBy('role_id')->get(),
+            ]);
+        }else{
+            return "Error parsing CSV!";
         }
-        DB::commit();
-
-        return MyHelper::renderWithRole('User/Index', [
-            'imported_users' => $userData,
-            'row_count' => $counter,
-            'all_users' => User::orderBy('role_id')->get(),
-        ]);
     }
 
     public function sendPasswords(Request $request) {
         // Get csv file
         $file = $request->file('csv');
+        // Get file details
+        $filename = $file->getClientOriginalName();
+
+        // Moving file
+        $location = 'uploads';
+        $file->move($location,$filename);
+        $filepath = public_path($location . "/" . $filename);
 
         // Create a CSV reader instance
-        $reader = Reader::createFromFileObject($file->openFile());
+        //$reader = Reader::createFromFileObject($file->openFile());
+        $fileopened = fopen($filepath, "r");
+        if($fileopened !== FALSE){
 
-        // Loop through rows
-        foreach ($reader as $index => $row) {
-            // Parse NIM, email, and password
-            $nimEmailPassword = explode(";", $row[0]);
-            $nim = $nimEmailPassword[0];
-            $email = $nimEmailPassword[1];
-            $password = $nimEmailPassword[2];
+            // Create a CSV reader instance
+            //$reader = Reader::createFromFileObject($file->openFile());
 
-            // Send email using queue
-            Mail::to($email)
-                ->queue(new PasswordInfo($nim, $password));
+            // Loop through rows
+            while(($line = fgetcsv($fileopened)) !== FALSE) {
+                // Parse NIM, email, and password
+                //$nimEmailPassword = explode(";", $row[0]
+                $nimEmailPassword = $line;
+                $nim = $nimEmailPassword[0];
+                $email = $nimEmailPassword[1];
+                $password = $nimEmailPassword[2];
+
+                // Send email using queue
+                Mail::to($email)
+                    ->send(new PasswordInfo($nim, $password));
+            }
+
+            return redirect()->route('users')->with('info', "Sukses mengirimkan password");
+        }else{
+            return "Error parsing CSV!";
         }
-
-        return redirect()->route('users')->with('info', "Sukses mendaftarkan queue");
     }
 }

@@ -109,7 +109,7 @@ class VoteController extends Controller
 
                 // Prepare user data
                 $email = $user->email;
-                $emailOffice = $user->nim . '@office.itb.ac.id';
+                $emailOffice = $user->nim . '@mahasiswa.itb.ac.id';
                 $nim = $user->nim;
                 $name = $user->name;
                 $time = $voteRequest->created_at;
@@ -140,15 +140,15 @@ class VoteController extends Controller
                 ->sheetById($sheetIds[0])
                 ->range('Sheet1!A:C')
                 #->range('A' . ($userRow + 1))
-                ->update([[$nim, $name, "Telah Memilih"]]);
+                ->append([[$nim, $name, "Telah Memilih"]]);
 
             // Send mail to registered email
             Mail::to($email)
                 ->send(new VoteReceived($nim, $name, $time));
 
             // Send another mail to office ITB mail
-            Mail::to($emailOffice)
-                ->send(new VoteReceived($nim, $name, $time));
+            // Mail::to($emailOffice)
+            //     ->send(new VoteReceived($nim, $name, $time));
 
             return redirect('dashboard');
         } else {
